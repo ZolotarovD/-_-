@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://7k2rardl8kpy"]
+
+[ext_resource type="Script" path="res://__forest.gd" id="1_isv32"]
+[ext_resource type="Texture2D" uid="uid://bg3d1tam0cnya" path="res://img/woodenhomet.png" id="1_nujn4"]
+[ext_resource type="Texture2D" uid="uid://bu1uatqv2suiv" path="res://img/forest1_.png" id="2_mgknk"]
+[ext_resource type="AudioStream" uid="uid://dt2wamdm0egm5" path="res://sound/Shadows20Whispers2 (mp3cut.net).mp3" id="3_ysmnl"]
+[ext_resource type="PackedScene" uid="uid://e50qwpag276j" path="res://Wendigo.tscn" id="4_2v37f"]
+[ext_resource type="FontFile" uid="uid://b6nloh0n2hi2g" path="res://yoster.ttf" id="5_mer6c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sdpr"]
+texture = ExtResource("2_mgknk")
+texture_region_size = Vector2i(1920, 1080)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-960, 474.633, 960, 476.22, 960, 540, -960, 540)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85l3v"]
+texture = ExtResource("1_nujn4")
+texture_region_size = Vector2i(1920, 1080)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-960, 456.791, 960, 455.377, 960, 540, -960, 540)
+
+[sub_resource type="TileSet" id="TileSet_ogc58"]
+tile_size = Vector2i(1920, 1080)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_85l3v")
+sources/0 = SubResource("TileSetAtlasSource_3sdpr")
+
+[node name="FOREST" type="Node2D"]
+script = ExtResource("1_isv32")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ogc58")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65535, 0, 0, 65534, 0, 0, 1, 0, 0, 65533, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_2v37f")]
+position = Vector2(-956, 583)
+
+[node name="Label" type="Label" parent="CharacterBody2D"]
+texture_filter = 1
+offset_left = -957.0
+offset_top = 532.0
+offset_right = 957.0
+offset_bottom = 2251.0
+theme_override_colors/font_color = Color(0.929412, 0.898039, 0.827451, 1)
+theme_override_colors/font_shadow_color = Color(0.101961, 0.0352941, 0.101961, 1)
+theme_override_fonts/font = ExtResource("5_mer6c")
+theme_override_font_sizes/font_size = 30
+text = "У сучасному світі комп'ютерні ігри відіграють важливу роль у розвитку індустрії розваг та навчання. 
+Залучення уваги гравців стає все складнішим у зв'язку зі зростанням конкуренції, тому розробники
+активно використовують різноманітні підходи до створення унікальних і захоплюючих ігрових проектів.
+Збір та аналіз даних про ігрові механіки, художні стилі та звуковий супровід стає ключовим аспектом
+успішної розробки ігор.
+
+
+
+
+У цьому контексті виникає необхідність у створенні ігор, які поєднують цікаві сюжетні лінії,
+інноваційні механіки та атмосферний дизайн. Саме для цієї мети було розроблено
+гру \"Вендіго: Прокляття лісу\", яка надає гравцям можливість зануритися
+у світ таємничих пригод і розгадок.
+
+
+
+
+У грі реалізовано широкий функціонал, який дозволяє гравцям взаємодіяти з різними об'єктами,
+вирішувати головоломки та досліджувати навколишній світ. Ключові можливості гри включають:
+
+1.	Унікальний сюжет: Гравець керує Вендіго, який намагається розгадати таємниці
+свого прокляття та відновити свою людську подобу.
+
+2.	Інтерактивні локації: У грі представлені дві основні локації – темний ліс та дерев'яний будинок,
+кожна з яких має свої унікальні особливості та загадки.
+
+3.	Механіка відкривання: Гравець має можливість знаходити та використовувати ключі
+для відкривання дверей та шафок,
+що приховують підказки та корисні предмети.
+
+4.	Оригінальні спрайти та музика: Усі графічні елементи гри виконані у стилі піксель-арт,
+що додає грі особливого шарму. Атмосферний звуковий супровід підкреслює мрачну та таємничу атмосферу гри.
+
+5.	Забезпечення безпеки даних: Гра зберігає прогрес гравця, що дозволяє продовжувати
+гру з моменту останнього збереження без втрати даних.
+Завдяки зручному інтерфейсу та захоплюючому сюжету гра стає доступною
+для широкого кола гравців і дозволяє ефективно зануритися у світ пригод та таємниць.
+Такий підхід допомагає підвищити інтерес до жанру ігор про міфічних істот
+та забезпечити успішне просування проекту на ринку.
+"
+horizontal_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ysmnl")
